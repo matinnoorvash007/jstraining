@@ -1,3 +1,3 @@
 # jstraining
 javascript timer
-bootstrap,javascript
+bootstrap
