@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div class="container border col-6  mt-5 bg-light">
+        <div class="row">
+            <div class="matin col-8 col-lg-12  text-center justify-content-center fs-2 text-capitalize">timer matin noorvash</div>
+            <hr>
+            <div class="row">
+                <div class="matin2 col-4 col-lg-12 col-mg-4 d-flex justify-content-center mt-4 ">
+            <button class="btn bg-info text-light rounded align-items-center justify-content-center mx-2 ">start</button>
+            <button class="btn bg-info text-light rounded align-items-center justify-content-center mx-2 ">stop</button>
+            <button class="btn bg-info text-light rounded align-items-center justify-content-center mx-2 ">reset</button>
+
+        </div>
+        </div>
+        </div>
+        <div class="row col-12 text-center d-flex justify-content-center col-mg-8 col-lg-12">
+           
+            <h1 class="text-info" id="mili"></h1>
+            <h1 class="text-dark" id="sec"></h1>
+            <h1 class="text-info" id="min"></h1>
+    
+    </div>
+
+
+
+    <script>
+
+
+
+let mili =0
+let sec =0
+let min =0
+let _set =''
+function _start(){
+    if(mili<99){
+        mili++
+    }else{
+
+        if(sec<59){
+        sec++
+    }else{
+       sec=0
+        min++
+        document.getElementById('min').innerHTML=min
+    }
+mili=0
+document.getElementById('sec').innerHTML=sec
+}
+document.getElementById('mili').innerHTML=mili
+}
+let _btn = document.querySelectorAll('button')
+_btn[0].addEventListener('click',function(){
+    _set = setInterval(_start,10)
+})
+_btn[1].addEventListener('click',function(){
+    clearInterval(_set)
+})
+_btn[2].addEventListener('click',function(){
+    mili = 0
+    sec = 0
+    min = 0
+    document.getElementById('mili').innerHTML=mili
+    document.getElementById('sec').innerHTML=sec
+    document.getElementById('min').innerHTML=min
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+ crossorigin="anonymous"></script>
+</html>
